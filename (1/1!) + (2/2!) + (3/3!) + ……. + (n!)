@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+// Function to calculate the factorial of a number
+long double factorial(int num) {
+    long double fact = 1.0;
+    for (int i = 1; i <= num; ++i) {
+        fact *= i;
+    }
+    return fact;
+}
+
+int main() {
+    int n;
+    long double sum = 0.0;
+
+    // Prompt user for the value of n
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+
+    // Calculate the value of the series
+    for (int i = 1; i <= n; ++i) {
+        sum += (i / factorial(i));
+    }
+
+    // Output the result
+    printf("The value of the series is: %Lf\n", sum);
+
+    return 0;
+}
