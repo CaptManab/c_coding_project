@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n;
+    double X, sum = 0.0;
+
+    // Prompt user for the values of X and n
+    printf("Enter the value of X: ");
+    scanf("%lf", &X);
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    // Calculate the value of the series
+    for (int i = 1; i <= n; ++i) {
+        double term = i * pow(X, i);
+        if (i % 2 == 0) {
+            term = -term;
+        }
+        sum += term;
+    }
+
+    // Output the result
+    printf("The value of the series is: %lf\n", sum);
+
+    return 0;
+}
